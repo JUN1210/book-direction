@@ -1,3 +1,6 @@
+-*- coding: utf-8 -*-
+
+import os
 import direction
 import pandas as pd
 from flask import Flask, render_template, request, redirect, url_for
