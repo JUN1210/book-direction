@@ -23,11 +23,11 @@ def search(amazon, k, i, pg):
     return amazon.ItemSearch(Keywords=k, SearchIndex=i, Sort="daterank", ResponseGroup="Medium", ItemPage=pg, Power="binding:not kindle")
 
 
-def main(d_words1, d_words2, d_words3):
+def main(d_words1):
     direction_words =[]
     direction_words.append(d_words1)
-    direction_words.append(d_words2)
-    direction_words.append(d_words3)
+#    direction_words.append(d_words2)
+#    direction_words.append(d_words3)
     amazon = Amazon(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_ASSOCIATE_TAG, Region='JP',
                     Parser=lambda text: BeautifulSoup(text, 'xml')
                     )
@@ -36,7 +36,7 @@ def main(d_words1, d_words2, d_words3):
 
     # ワードでアマゾン検索かける。本のジャンルだけ。
     for keyword in direction_words:
-        for pg in range(1, 6):
+        for pg in range(1, 11):
             response = search(amazon, keyword, "Books", pg) #本だけじゃないときは"Books"を変える https://images-na.ssl-images-amazon.com/images/G/09/associates/paapi/dg/index.html
 #            print(response)  #特にprintする必要はない
 

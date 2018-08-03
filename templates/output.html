@@ -13,7 +13,7 @@
   <link href="/static/style.css" rel="stylesheet" />
 </head>
 <body>
-    <h3>「{{ keyword1 }}」 「{{ keyword2 }}」 「{{ keyword3 }}」　での検索結果です。</h3>
+    <h3>「{{ keyword1 }}」<!-- 「{{ keyword2 }}」 「{{ keyword3 }}」 -->　での検索結果です。</h3>
     <h4>チェック後、送信して下さい。</h4>
 <form action="{{ url_for('printout')}}" method="POST">
   <button type="submit">送信</button>

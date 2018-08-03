@@ -14,26 +14,26 @@ def index():
 @app.route("/output", methods=["POST"])
 def output():
     search_keyword1 = request.form["keyword1"]
-    search_keyword2 = request.form["keyword2"]
-    search_keyword3 = request.form["keyword3"]
+#    search_keyword2 = request.form["keyword2"]
+#    search_keyword3 = request.form["keyword3"]
 #    output_df = direction.main(search_keyword)
-    return redirect(url_for("redirect_test", keyword1 = search_keyword1,
-                                             keyword2 = search_keyword2,
-                                             keyword3 = search_keyword3))
+    return redirect(url_for("redirect_test", keyword1 = search_keyword1)
+#                                             keyword2 = search_keyword2,
+#                                             keyword3 = search_keyword3))
 #                                             output_df = output_df))
 
 
 @app.route("/redirect_test", methods=["GET"])
 def redirect_test():
     keyword1 = request.args.get("keyword1", "")
-    keyword2 = request.args.get("keyword2", "")
-    keyword3 = request.args.get("keyword3", "")
-    output_df = direction.main(keyword1, keyword2, keyword3)
+#    keyword2 = request.args.get("keyword2", "")
+#    keyword3 = request.args.get("keyword3", "")
+    output_df = direction.main(keyword1)
 #    output_table = direction.main(search_keyword)
     output_df.to_csv("datatable.csv")
     return render_template("output.html", keyword1 = keyword1,
-                                          keyword2 = keyword2,
-                                          keyword3 = keyword3,
+#                                          keyword2 = keyword2,
+#                                          keyword3 = keyword3,
                                           output_df = output_df)
 
 
