@@ -36,7 +36,7 @@ def main(d_words1, d_words2, d_words3):
 
     # ワードでアマゾン検索かける。本のジャンルだけ。
     for keyword in direction_words:
-        for pg in range(1, 11):
+        for pg in range(1, 6):
             response = search(amazon, keyword, "Books", pg) #本だけじゃないときは"Books"を変える https://images-na.ssl-images-amazon.com/images/G/09/associates/paapi/dg/index.html
 #            print(response)  #特にprintする必要はない
 
