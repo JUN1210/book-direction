@@ -17,7 +17,7 @@ def output():
 #    search_keyword2 = request.form["keyword2"]
 #    search_keyword3 = request.form["keyword3"]
 #    output_df = direction.main(search_keyword)
-    return redirect(url_for("redirect_test", keyword1 = search_keyword1)
+    return redirect(url_for("redirect_test", keyword1 = search_keyword1))
 #                                             keyword2 = search_keyword2,
 #                                             keyword3 = search_keyword3))
 #                                             output_df = output_df))
